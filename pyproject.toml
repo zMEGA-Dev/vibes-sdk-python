@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "vibes-sdk"
+version = "2.0.0"
+description = "Official Python SDK for the vibes.su link management platform"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "vibes.su", email = "support@vibes.su" }]
+requires-python = ">=3.9"
+keywords = ["vibes", "vibes.su", "url-shortener", "link-management", "qr-code", "geo-targeting", "sdk", "api"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+async = ["httpx>=0.27.0"]
+dev   = ["pytest>=8.0", "pytest-asyncio>=0.23", "python-dotenv>=1.0"]
+
+[project.urls]
+Homepage   = "https://vibes.su"
+Repository = "https://github.com/vibes-su/vibes-sdk-python"
+"API Docs" = "https://vibes.su/api-documentation"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vibes_sdk*"]
